@@ -15,12 +15,18 @@ const videoRoutes = require("./routes/videos");
 const app = express();
 
 // Middleware
-// app.use(cors());
+
+const allowedOrigins = [
+  "http://localhost:5173",
+  "https://video-frontend-ashy.vercel.app"
+];
+
 app.use(cors({
-    origin: "http://localhost:5173", // or your frontend port
-    methods: ["GET", "POST"],
-    credentials: true
-  }));
+  origin: allowedOrigins,
+  credentials: true,
+}));
+
+
 app.use(express.json());
 
 app.use("/api/auth", authRoutes);
