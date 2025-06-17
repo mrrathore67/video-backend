@@ -95,7 +95,7 @@ const connectDB = async () => {
 
 // Test route
 app.get("/", (req, res) => {
-    res.send("This is video streaming web backend");
+    res.send("✅ Backend is live and running!");
 });
 
 // Start server only after DB connection
